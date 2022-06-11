@@ -17,7 +17,7 @@ void GameState::active()
 
 void GameState::update()
 {
-//    m_view.setCenter(shape->getPosition());
+    //m_view.setCenter(shape->getPosition());
     m_window->getSFMLWindow()->setView(m_view);
 }
 

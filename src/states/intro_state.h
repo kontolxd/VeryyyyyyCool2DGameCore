@@ -12,12 +12,14 @@ private:
     sf::Clock m_clock;
     sf::Time m_elapsedTime;
     int m_deltaTime;
+    EventManager *m_eventManager;
     AssetManager *m_assetManager;
     StateManager *m_stateManager;
     sf::Text m_SlavesProduction;
     sf::Text m_VeryVeryVeryImportantVariable;
 public:
     IntroState();
+    void skip(EventDetails*);
     virtual void active() override;
     virtual void update() override;
 };

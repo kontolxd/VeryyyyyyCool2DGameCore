@@ -9,6 +9,7 @@
 #include "states/game_state.h"
 #include "states/pause_state.h"
 #include "states/intro_state.h"
+#include "states/mainmenu_state.h"
 class GameLoop
 {
 private:

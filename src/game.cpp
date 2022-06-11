@@ -14,6 +14,8 @@ GameLoop::GameLoop() : m_window()
     m_stateManager->setStateWindow("game", &m_window);
     m_stateManager->addState("pause", new PauseState());
     m_stateManager->setStateWindow("pause", &m_window);
+    m_stateManager->addState("main_menu", new MainMenuState());
+    m_stateManager->setStateWindow("main_menu", &m_window);
     m_stateManager->activeState("intro");
 
     m_eventManager->addCallback("resize", &GameLoop::resize, this);

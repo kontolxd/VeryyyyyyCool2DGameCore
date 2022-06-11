@@ -5,6 +5,7 @@ IntroState::IntroState()
     m_elapsedTime = sf::Time::Zero;
     m_deltaTime = 0;
     m_a = 0;
+    m_eventManager = EventManager::getEventManager();
     m_assetManager = AssetManager::getAssetManager();
     m_stateManager = StateManager::getStateManager();
     m_SlavesProduction.setFont(m_assetManager->getFont("FreeMono.otf"));
@@ -15,6 +16,8 @@ IntroState::IntroState()
     m_VeryVeryVeryImportantVariable.setString("Very Very Cool Game");
     m_renderList.push_back(&m_SlavesProduction);
     m_renderList.push_back(&m_VeryVeryVeryImportantVariable);
+
+    m_eventManager->addCallback("skip_intro", &IntroState::skip, this);
 }
 
 void IntroState::active()
@@ -36,5 +39,10 @@ void IntroState::update()
     if(m_a < 255)
         m_a = m_elapsedTime.asSeconds()*50;
     else
-        m_stateManager->activeState("game");
+        m_stateManager->activeState("main_menu");
+}
+
+void IntroState::skip(EventDetails *)
+{
+    m_stateManager->activeState("main_menu");
 }

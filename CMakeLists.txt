@@ -19,7 +19,8 @@ add_executable(VeryyyyyyCool2DGameCore
     src/states/game_state.h src/states/game_state.cpp
     src/states/pause_state.h src/states/pause_state.cpp
     src/states/intro_state.h src/states/intro_state.cpp
-    src/animator.h src/animator.cpp)
+    src/animator.h src/animator.cpp
+    src/states/mainmenu_state.h src/states/mainmenu_state.cpp)
 
 target_link_libraries(VeryyyyyyCool2DGameCore lua sfml-graphics sfml-window sfml-system sfml-audio)
 
