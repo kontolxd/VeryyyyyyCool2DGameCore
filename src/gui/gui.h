@@ -18,6 +18,7 @@ public:
     int getY();
     virtual void clicked(EventDetails*) = 0;
     virtual void draw(Window *window) = 0;
+    virtual ~GUI();
     template<class T>
     void setAction(void(T::*l_func)(), T* l_instance)
     {

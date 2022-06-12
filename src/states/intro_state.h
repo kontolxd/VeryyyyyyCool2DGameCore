@@ -19,6 +19,7 @@ private:
     sf::Text m_VeryVeryVeryImportantVariable;
 public:
     IntroState();
+    ~IntroState();
     void skip(EventDetails*);
     virtual void active() override;
     virtual void update() override;

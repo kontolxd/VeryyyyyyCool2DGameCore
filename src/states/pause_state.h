@@ -14,6 +14,7 @@ private:
     EventManager *m_eventManager;
 public:
     PauseState();
+    ~PauseState();
     virtual void active();
     virtual void update();
     void tooglePause(EventDetails*);

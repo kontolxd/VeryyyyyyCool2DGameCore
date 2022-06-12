@@ -21,7 +21,14 @@ GameLoop::GameLoop() : m_window()
     m_eventManager->addCallback("resize", &GameLoop::resize, this);
 }
 
-GameLoop::~GameLoop(){}
+GameLoop::~GameLoop()
+{
+    for(auto it = m_renderPoll.begin(); it != m_renderPoll.end(); it++)
+    {
+        delete (*it).second;
+        m_renderPoll.erase(it);
+    }
+}
 
 Window* GameLoop::getWindow()
 {

@@ -13,6 +13,7 @@ private:
     TextBox *m_textbox;
 public:
     MainMenuState();
+    ~MainMenuState();
     virtual void active() override;
     virtual void update() override;
     void stub(){std::cout<<"suk"<<std::endl;}

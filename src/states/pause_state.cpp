@@ -12,6 +12,8 @@ PauseState::PauseState()
     m_renderList.push_back(&m_text);
 }
 
+PauseState::~PauseState(){}
+
 void PauseState::active()
 {
     m_eventManager->addCallback("pause", &PauseState::tooglePause, this);

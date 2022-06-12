@@ -20,6 +20,11 @@ IntroState::IntroState()
     m_eventManager->addCallback("skip_intro", &IntroState::skip, this);
 }
 
+IntroState::~IntroState()
+{
+
+}
+
 void IntroState::active()
 {
 

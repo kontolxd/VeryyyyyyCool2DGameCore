@@ -14,6 +14,7 @@ private:
     void tooglePause(EventDetails*);
 public:
     GameState();
+    ~GameState();
     virtual void active();
     virtual void update();
 };

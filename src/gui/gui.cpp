@@ -15,3 +15,5 @@ int GUI::getY()
 {
     return m_y;
 }
+
+GUI::~GUI(){}

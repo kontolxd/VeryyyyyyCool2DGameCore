@@ -16,7 +16,7 @@ private:
     virtual void draw(sf::RenderTarget &l_target, sf::RenderStates states) const override;
 public:
     TextBox();
-
+    ~TextBox();
     void setColor(sf::Color color);
     void setColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a = 255);
     void setSize(int width, int height);

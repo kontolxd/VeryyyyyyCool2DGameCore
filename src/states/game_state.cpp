@@ -9,6 +9,8 @@ GameState::GameState() : l_x(0), l_y(0)
 //    m_renderList.push_back(shape);
 }
 
+GameState::~GameState(){}
+
 void GameState::active()
 {
     m_eventManager->addCallback("pause", &GameState::tooglePause, this);

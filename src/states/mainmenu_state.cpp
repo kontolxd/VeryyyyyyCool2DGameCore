@@ -15,6 +15,11 @@ MainMenuState::MainMenuState()
 
 }
 
+MainMenuState::~MainMenuState()
+{
+    delete m_textbox;
+}
+
 void MainMenuState::active()
 {
     m_window->getSFMLWindow()->setView(m_view);

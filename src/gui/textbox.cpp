@@ -12,6 +12,11 @@ TextBox::TextBox()
 //    m_text.setPosition(m_x, m_y + (m_height/2)*(m_height/4));
 }
 
+TextBox::~TextBox()
+{
+    delete m_rect;
+}
+
 void TextBox::clicked(EventDetails* l_details)
 {
 
@@ -77,3 +82,4 @@ void TextBox::setPosition(uint8_t l_x, uint8_t l_y)
     m_rect->setPosition(m_x, m_y);
     m_text.setPosition(m_x, m_y);
 }
+
