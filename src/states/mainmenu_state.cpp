@@ -13,22 +13,18 @@ MainMenuState::MainMenuState()
     m_newButton->setSize(350,50);
     m_newButton->setFont("FreeMono.otf");
     m_newButton->setText("Generate new world");
-    //m_newButton->setPosition(m_window->widht()/2-175, m_window->height()/2);
-    //m_newButton->setAction(&MainMenuState::b_new, this);
     m_renderList.push_back(m_newButton);
 
-    m_settingsButton->setColor(sf::Color::Red);
+    m_settingsButton->setColor(sf::Color::White);
     m_settingsButton->setSize(150,50);
     m_settingsButton->setFont("FreeMono.otf");
     m_settingsButton->setText("Settings");
-    //m_settingsButton->setPosition(m_window->widht()/2-75, m_window->height()/2+60);
     m_renderList.push_back(m_settingsButton);
 
     m_exitButton->setColor(sf::Color::Red);
     m_exitButton->setSize(100,50);
     m_exitButton->setFont("FreeMono.otf");
     m_exitButton->setText("Exit");
-    //m_exitButton->setPosition(m_window->widht()/2-50, m_window->height()/2+120);
     m_exitButton->setAction(&MainMenuState::b_new, this);
     m_renderList.push_back(m_exitButton);
 
@@ -87,7 +83,7 @@ void MainMenuState::clicked(EventDetails *l_details)
 
 void MainMenuState::b_exit()
 {
-
+    m_window->close(nullptr);
 }
 
 void MainMenuState::b_settings()
@@ -98,4 +94,5 @@ void MainMenuState::b_settings()
 void MainMenuState::b_new()
 {
     m_stateManager->activeState("game");
+    m_eventManager->removeCallback("clicked");
 }

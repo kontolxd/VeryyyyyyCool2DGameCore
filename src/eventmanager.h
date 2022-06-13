@@ -27,6 +27,7 @@ public:
     bool addBinding(std::string, Binding*);
     void removeBinding(std::string);
     void handleEvent(sf::Event&);
+    void removeCallback(std::string);
     template<class T>
     bool addCallback(std::string l_name, void(T::*l_func)(EventDetails*), T *instance)
     {
@@ -38,7 +39,7 @@ public:
         auto tmp = std::bind(l_func, instance, std::placeholders::_1);
         return m_callbacks.emplace(l_name, tmp).second;
     }
-    void removeCallback(std::string);
+
 };
 
 struct EventDetails
