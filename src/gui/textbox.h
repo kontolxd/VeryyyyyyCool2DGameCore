@@ -11,7 +11,7 @@ private:
     int m_width, m_height;
     sf::Color m_color;
     sf::RectangleShape *m_rect;
-    sf::Text m_text;
+    sf::Text *m_text;
     sf::Font m_font;
     virtual void draw(sf::RenderTarget &l_target, sf::RenderStates states) const override;
 public:
@@ -22,8 +22,10 @@ public:
     void setSize(int width, int height);
     void setText(std::string content);
     void setFont(std::string fontName);
-    void setPosition(uint8_t x, uint8_t y);
-    virtual void clicked(EventDetails*) override;
+    void setPosition(uint16_t x, uint16_t y);
+    int getWidth();
+    int getHeight();
+    //virtual void clicked(EventDetails*) override;
     virtual void draw(Window *window) override;
 
 };

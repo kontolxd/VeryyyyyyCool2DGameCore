@@ -16,7 +16,7 @@ public:
     GUI();
     int getX();
     int getY();
-    virtual void clicked(EventDetails*) = 0;
+    //virtual void clicked(EventDetails*) = 0;
     virtual void draw(Window *window) = 0;
     virtual ~GUI();
     template<class T>
