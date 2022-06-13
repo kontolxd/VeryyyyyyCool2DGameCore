@@ -17,6 +17,7 @@ public:
     ~PauseState();
     virtual void active();
     virtual void update();
+    virtual void deactivate();
     void tooglePause(EventDetails*);
 };
 

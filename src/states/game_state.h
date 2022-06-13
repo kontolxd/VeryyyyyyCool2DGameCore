@@ -17,4 +17,5 @@ public:
     ~GameState();
     virtual void active();
     virtual void update();
+    virtual void deactivate();
 };

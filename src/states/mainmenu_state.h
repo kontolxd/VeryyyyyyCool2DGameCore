@@ -26,6 +26,7 @@ public:
     ~MainMenuState();
     virtual void active() override;
     virtual void update() override;
+    virtual void deactivate() override;
 };
 
 #endif // MAINMENUSTATE_H

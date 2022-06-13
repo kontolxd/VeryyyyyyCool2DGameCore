@@ -27,8 +27,6 @@ MainMenuState::MainMenuState()
     m_exitButton->setText("Exit");
     m_exitButton->setAction(&MainMenuState::b_new, this);
     m_renderList.push_back(m_exitButton);
-
-    m_eventManager->addCallback("clicked", &MainMenuState::clicked, this);
 }
 
 MainMenuState::~MainMenuState()
@@ -49,6 +47,11 @@ void MainMenuState::update()
     m_newButton->setPosition(m_window->widht()/2-175, m_window->height()/2);
     m_settingsButton->setPosition(m_window->widht()/2-75, m_window->height()/2+60);
     m_exitButton->setPosition(m_window->widht()/2-50, m_window->height()/2+120);
+}
+
+void MainMenuState::deactivate()
+{
+    m_eventManager->removeCallback("clicked");
 }
 
 void MainMenuState::clicked(EventDetails *l_details)
@@ -94,5 +97,4 @@ void MainMenuState::b_settings()
 void MainMenuState::b_new()
 {
     m_stateManager->activeState("game");
-    m_eventManager->removeCallback("clicked");
 }

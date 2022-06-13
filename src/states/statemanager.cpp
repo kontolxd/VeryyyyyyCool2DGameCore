@@ -18,6 +18,8 @@ void StateManager::activeState(std::string l_stateName)
     auto state = m_states.find(l_stateName);
     if(state != m_states.end())
     {
+        if(m_currentStateName != "")
+            m_currentState->deactivate();
         m_currentState = state->second;
         m_currentState->active();
         m_currentStateName = l_stateName;

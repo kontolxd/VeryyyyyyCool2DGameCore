@@ -23,6 +23,11 @@ void GameState::update()
     m_window->getSFMLWindow()->setView(m_view);
 }
 
+void GameState::deactivate()
+{
+    m_eventManager->removeCallback("pause");
+}
+
 void GameState::tooglePause(EventDetails *)
 {
     m_stateManager->activeState("pause");

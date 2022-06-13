@@ -47,8 +47,12 @@ void IntroState::update()
         m_stateManager->activeState("main_menu");
 }
 
+void IntroState::deactivate()
+{
+    m_eventManager->removeCallback("skip_intro");
+}
+
 void IntroState::skip(EventDetails *)
 {
     m_stateManager->activeState("main_menu");
-    m_eventManager->removeCallback("skip_intro");
 }

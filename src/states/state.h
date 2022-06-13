@@ -10,6 +10,7 @@ protected:
     std::list<sf::Drawable*> m_renderList;
 public:
     virtual void active() = 0;
+    virtual void deactivate() = 0;
     virtual void update() = 0;
     virtual void draw()
     {

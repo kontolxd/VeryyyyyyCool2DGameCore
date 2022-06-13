@@ -23,6 +23,7 @@ public:
     void skip(EventDetails*);
     virtual void active() override;
     virtual void update() override;
+    virtual void deactivate() override;
 };
 
 #endif // INTRO_STATE_H
